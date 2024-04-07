@@ -1,0 +1,4 @@
+  File "/panfs/jay/groups/33/kuangr/inoue019/Dual3DDTI/exp_stitch/pdb_gt.py", line 224
+    drug_hidden = trial.suggest_categorical("drug_hidden", [16, 32, 64])
+    ^
+SyntaxError: invalid syntax

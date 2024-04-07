@@ -1,0 +1,5 @@
+[I 2023-12-26 11:45:59,548] A new study created in RDB with name: GATv2Conv
+/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/torch_geometric/deprecation.py:22: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
+  warnings.warn(out)
+/var/spool/slurmd/job78093427/slurm_script: line 14: 2505056 Killed                  python pdb_gat.py
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=78093427.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.

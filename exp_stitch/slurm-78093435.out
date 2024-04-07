@@ -1,0 +1,54 @@
+[I 2023-12-26 11:49:06,984] A new study created in RDB with name: GCNConv
+/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/torch_geometric/deprecation.py:22: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
+  warnings.warn(out)
+[W 2023-12-26 11:51:03,056] Trial 0 failed with parameters: {'batch_size': 50} because of the following error: OSError(14, 'Bad address').
+Traceback (most recent call last):
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/panfs/jay/groups/33/kuangr/inoue019/Dual3DDTI/exp_stitch/pdb_GCNConv.py", line 216, in objective
+    protein_train_loader = get_protein_dataloader(train['Entry'], batch_size)
+  File "/panfs/jay/groups/33/kuangr/inoue019/Dual3DDTI/exp_stitch/pdb_GCNConv.py", line 187, in get_protein_dataloader
+    dataset = [torch.load('../cmap/{}.pt'.format(i)) for i in proteins]
+  File "/panfs/jay/groups/33/kuangr/inoue019/Dual3DDTI/exp_stitch/pdb_GCNConv.py", line 187, in <listcomp>
+    dataset = [torch.load('../cmap/{}.pt'.format(i)) for i in proteins]
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/torch/serialization.py", line 809, in load
+    return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/torch/serialization.py", line 1172, in _load
+    result = unpickler.load()
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/torch/serialization.py", line 1142, in persistent_load
+    typed_storage = load_tensor(dtype, nbytes, key, _maybe_decode_ascii(location))
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/torch/serialization.py", line 1112, in load_tensor
+    storage = zip_file.get_storage_from_record(name, numel, torch.UntypedStorage)._typed_storage()._untyped_storage
+OSError: [Errno 14] Bad address
+[W 2023-12-26 11:51:03,062] Trial 0 failed with value None.
+Train dim: (24964, 3)
+val dim: (3531, 3)
+test dim: (7169, 3)
+Traceback (most recent call last):
+  File "/panfs/jay/groups/33/kuangr/inoue019/Dual3DDTI/exp_stitch/pdb_GCNConv.py", line 296, in <module>
+    study.optimize(objective, n_trials=1000, gc_after_trial=True)
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/optuna/study/study.py", line 442, in optimize
+    _optimize(
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/panfs/jay/groups/33/kuangr/inoue019/Dual3DDTI/exp_stitch/pdb_GCNConv.py", line 216, in objective
+    protein_train_loader = get_protein_dataloader(train['Entry'], batch_size)
+  File "/panfs/jay/groups/33/kuangr/inoue019/Dual3DDTI/exp_stitch/pdb_GCNConv.py", line 187, in get_protein_dataloader
+    dataset = [torch.load('../cmap/{}.pt'.format(i)) for i in proteins]
+  File "/panfs/jay/groups/33/kuangr/inoue019/Dual3DDTI/exp_stitch/pdb_GCNConv.py", line 187, in <listcomp>
+    dataset = [torch.load('../cmap/{}.pt'.format(i)) for i in proteins]
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/torch/serialization.py", line 809, in load
+    return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/torch/serialization.py", line 1172, in _load
+    result = unpickler.load()
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/torch/serialization.py", line 1142, in persistent_load
+    typed_storage = load_tensor(dtype, nbytes, key, _maybe_decode_ascii(location))
+  File "/home/kuangr/inoue019/.conda/envs/py39/lib/python3.9/site-packages/torch/serialization.py", line 1112, in load_tensor
+    storage = zip_file.get_storage_from_record(name, numel, torch.UntypedStorage)._typed_storage()._untyped_storage
+OSError: [Errno 14] Bad address
